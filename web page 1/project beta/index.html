@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project Beta</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: black;
+            padding: 0;
+            display:grid;
+            grid-template-columns: 25% 25%;
+            grid-template-rows: 25%;
+            height: 100vh;
+        }
+        .top {
+            grid-column: 1 / -1; /* Span all columns */
+        }
+        .left {
+            grid-row: 2;
+        }
+        .right {
+            grid-row: 2;
+        }
+        iframe {
+            border: black 1px solid; /* Changed border color to black */
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <iframe class="top" name="top" src="top_frame.html" title="Top Frame"></iframe>
+    <iframe class="left" name="left" src="left_frame.html" title="Left Frame"></iframe>
+    <iframe class="right" name="right" src="right_frame.html" title="Right Frame"></iframe>
+</body>
+</html>
