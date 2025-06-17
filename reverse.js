@@ -1,7 +1,7 @@
 function reverse(x) {
-    const isNegative = x0;
+    const isNegative = x < 0;
     let reversed=
-parseint(math.abs(x).string().tosplit("")).reverse().join("");
+parseInt(Math.abs(x).toString().split("").reverse().join(""));
     if (isNegative) 
         reversed = -reversed;
     
