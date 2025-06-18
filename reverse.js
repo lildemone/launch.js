@@ -1,16 +1,14 @@
 function reverse(x) {
-    const isNegative = x0;
-    let reversed=
-parseint(math.abs(x).string().tosplit("")).reverse().join("");
-    if (isNegative) 
-        reversed = -reversed;
-    
-    if (reversed < 2**31 - 1 ) return 0;
+    const isNegative = x < 0;  // Check if the number is negative
+    let reversed = 
+        parseInt(Math.abs(x).toString().split("").reverse().join(""));
 
-    return isNegative? -reversed : reversed;
-    
+    if (reversed > 2**31 - 1) return 0;  // Handle overflow
+
+    return isNegative ? -reversed : reversed;  // Add negative sign back if needed
 }
-console.log(reverse(123)); // Output: 321
-console.log(reverse(-123)); // Output: -321
-console.log(reverse(120)); // Output: 21
-console.log(reverse(0)); // Output: 0
+
+console.log(reverse(123));   // 321
+console.log(reverse(-123));  // -321
+console.log(reverse(120));   // 21
+console.log(reverse(0));     // 0
