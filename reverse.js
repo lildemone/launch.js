@@ -1,24 +1,34 @@
+const readline = require('readline');
+
+// Setup readline interface for terminal input
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+// Function to reverse an integer and handle edge cases
 function reverse(x) {
-<<<<<<< HEAD
-    const isNegative = x < 0;  // Check if the number is negative
-    let reversed = 
-        parseInt(Math.abs(x).toString().split("").reverse().join(""));
-=======
-    const isNegative = x < 0;
-    let reversed=
-parseInt(Math.abs(x).toString().split("").reverse().join(""));
-    if (isNegative) 
-        reversed = -reversed;
-    
-    if (reversed < 2**31 - 1 ) return 0;
->>>>>>> 7aa52c3835c0eba3fa3b782116ce7d710a1e8398
+  const isNegative = x < 0;
 
-    if (reversed > 2**31 - 1) return 0;  // Handle overflow
+  let reversed = parseInt(Math.abs(x).toString().split('').reverse().join('')
+  );
 
-    return isNegative ? -reversed : reversed;  // Add negative sign back if needed
+  if (reversed > 2 ** 31 - 1) return 0;
+
+  return isNegative ? -reversed : reversed;
 }
 
-console.log(reverse(123));   // 321
-console.log(reverse(-123));  // -321
-console.log(reverse(120));   // 21
-console.log(reverse(0));     // 0
+// Ask the user for input
+rl.question('Enter a number to reverse: ', function(input) {
+  const number = parseInt(input);
+
+  // Check if valid number
+  if (isNaN(number)) {
+    console.log("That is not a valid number.");
+  } else {
+    const result = reverse(number);
+    console.log("Reversed number:", result);
+  }
+
+  rl.close(); // End input
+});
