@@ -1,5 +1,8 @@
 function isPalindrome(x) {
+<<<<<<< HEAD
     // Negative numbers are not palindromes
+=======
+>>>>>>> 7aa52c3835c0eba3fa3b782116ce7d710a1e8398
     if (x < 0) return false;
 
     // Convert the number to a string
